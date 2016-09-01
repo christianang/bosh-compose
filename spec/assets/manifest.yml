@@ -1,0 +1,6 @@
+---
+jobs:
+- name: some-job
+
+properties:
+  echo_me: "Hello World"
