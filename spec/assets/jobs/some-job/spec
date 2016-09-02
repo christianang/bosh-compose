@@ -1,0 +1,15 @@
+---
+name: some-job
+
+templates:
+  template.erb: bin/template
+
+packages: []
+
+properties:
+  echo_me:
+    description: "Some property to use by default"
+    default: "foobar"
+  echo_me_too:
+    description: "Some property to use by default"
+    default: "foobar"

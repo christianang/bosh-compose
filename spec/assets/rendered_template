@@ -1,3 +1,4 @@
 #!/bin/bash -exu
 
 echo "Hello World"
+echo "foobar"

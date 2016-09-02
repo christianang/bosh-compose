@@ -7,7 +7,7 @@ RSpec.describe Bosh::Compose::Renderer, "#render" do
   end
 
   let(:template) do
-    File.join(assets_dir, 'template.erb')
+    File.join(assets_dir, 'jobs/some-job/templates/template.erb')
   end
 
   let(:manifest) do
