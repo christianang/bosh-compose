@@ -1,9 +1,9 @@
 require 'json'
-require 'compose'
+require 'bosh-compose'
 
-RSpec.describe Compose::Renderer, "#render" do
+RSpec.describe Bosh::Compose::Renderer, "#render" do
   subject(:renderer) do
-    Compose::Renderer.new
+    Bosh::Compose::Renderer.new
   end
 
   let(:template) do
