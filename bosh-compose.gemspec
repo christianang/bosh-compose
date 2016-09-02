@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.executables  = %w(bosh-compose)
 
   s.add_dependency 'bosh-template', '~>1.3262'
+  s.add_dependency 'thor', '~> 0.19.1'
 
   s.add_development_dependency 'rspec', '~>3.0'
 end
