@@ -7,9 +7,14 @@ templates:
 packages: []
 
 properties:
-  echo_me:
+  car.make:
     description: "Some property to use by default"
     default: "foobar"
-  echo_me_too:
+
+  car.model:
+    description: "Some property to use by default"
+    default: "foobar"
+
+  car.features.power_windows:
     description: "Some property to use by default"
     default: "foobar"

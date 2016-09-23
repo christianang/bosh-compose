@@ -35,10 +35,37 @@ module Bosh
       def set_defaults_from_spec(manifest, spec)
         spec["properties"].map do |key, value|
           if !manifest["properties"].key? key
-            manifest["properties"][key] = value["default"]
+            add_nested_property(manifest["properties"], key, value["default"])
           end
         end
         return manifest
+      end
+
+      # car.make
+      # set_value("car.make")
+      #   map[car] = [make]
+      #
+      # set_value("car.model")
+      # map[car] = [make, model]
+      #
+      # set_value("car.features.power_windows")
+      #   map[car] = set_value("features.power_windows")
+      #   map[car] = map[features] = [power_windows]
+      def add_nested_property(map, key, value)
+        if !key.include? '.'
+          if map[key].nil?
+            map[key] = value
+          end
+
+          return
+        end
+
+        keys = key.split '.'
+        if map[keys.first].nil?
+          map[keys.first] = {}
+        end
+
+        add_nested_property map[keys.first], keys.drop(1).join('.'), value
       end
     end
   end
