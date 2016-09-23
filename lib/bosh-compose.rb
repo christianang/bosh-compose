@@ -12,9 +12,16 @@ module Bosh
         manifest = YAML.load(manifest_yaml)
         manifest = set_defaults_from_spec(manifest, spec) if spec != nil
 
-        manifest_json = JSON.generate(manifest)
+        context = {
+          "index": 0,
+          "job": {
+            "name": "some-job-name"
+          },
+          "properties": manifest["properties"]
+        }
+        context_json = JSON.generate(context)
 
-        renderer = Bosh::Template::Renderer.new(context: manifest_json)
+        renderer = Bosh::Template::Renderer.new(context: context_json)
         renderer.render(template_file)
       end
 

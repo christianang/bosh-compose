@@ -1,5 +1,6 @@
 #!/bin/bash -exu
 
+echo "Name: some-job-name.0"
 echo "Car Make: Make"
 echo "Car Model: Model"
 echo "Car Features - Power windows: foobar"
